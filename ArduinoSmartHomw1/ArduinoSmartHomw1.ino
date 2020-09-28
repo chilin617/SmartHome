@@ -4,10 +4,13 @@ void setup()
   pinMode(11, OUTPUT);
   pinMode(10, OUTPUT);
   pinMode(7, OUTPUT);
+  pinMode(2, INPUT);
+  Serial.begin(9600);
 }
 
 void loop() 
 {
+  if(digitalRead(2)==HIGH){
   digitalWrite(12, HIGH);
   digitalWrite(11, LOW);
   digitalWrite(10, LOW);
@@ -22,4 +25,5 @@ void loop()
   digitalWrite(10, HIGH);
   tone(7, 800, 500);
   delay(500);
+  }
 }
